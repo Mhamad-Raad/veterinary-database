@@ -14,3 +14,57 @@ SELECT * FROM animals where neutered = TRUE
 SELECT * FROM animals WHERE name != 'Gabumon'
 
 SELECT * FROM animals WHERE weight_kg <= 17.3 AND weight_kg >= 10.4
+
+
+begin;
+
+update animals set species = 'unspecified';
+
+rollback;
+
+
+begin
+
+update animals set species = 'digimon' where name like '%mon%';
+update animals set species = 'pokemon' where species is NULL;
+
+commit
+
+
+begin
+
+delete from animals
+
+rollback
+
+
+begin
+
+delete FROM animals WHERE date_of_birth > '1-JAN-2022'
+
+savepoint one
+
+update animals set weight_kg = weight_kg * -1
+
+rollback to savepoint one
+
+update animals set weight_kg = weight_kg * -1 where weight_kg < 0
+
+commit 
+
+select avg(weight_kg) from animals
+
+select * from animals where 
+weight_kg = (select max(weight_kg) from animals)
+or
+weight_kg = (select min(weight_kg) from animals)
+
+
+SELECT AVG(escape_attempts)
+FROM animals
+WHERE date_of_birth > '1-JAN-1990' AND date_of_birth < '31-DEC-2000';
+
+
+
+SELECT neutered, COUNT(neutered) AS count FROM animals
+GROUP BY neutered;
