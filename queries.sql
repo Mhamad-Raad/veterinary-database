@@ -68,3 +68,34 @@ WHERE date_of_birth > '1-JAN-1990' AND date_of_birth < '31-DEC-2000';
 
 SELECT neutered, COUNT(neutered) AS count FROM animals
 GROUP BY neutered;
+
+
+select name from animals as t1 inner join 
+owners as t2 on t2.id = t1.owner_id and t2.full_name = 'Melody Pond'
+
+select * from animals as t1 inner join 
+species as t2 on t2.id = t1.species_id and t2.name = 'Pokemon'
+
+
+select t1.name, t2.full_name from animals as t1 
+right join owners as t2 on t2.id = t1.owner_id
+
+select count(t1.*) as counter_per_species from animals as t1 
+inner join species as t2 on t2.id = t1.species_id 
+group by t1.species_id
+
+select t1.name, t2.name, t3.full_name from animals as t1 
+inner join species as t2 on  t2.id = t1.species_id  and t2.id = 2
+inner join owners as t3 on t1.owner_id = t3.id
+and t3.full_name = 'Jennifer Orwell'
+
+select t1.* from animals as t1 
+inner join owners as t2 on t1.owner_id = t2.id
+and t1.escape_attempts = 0 and t2.full_name = 'Dean Winchester'
+
+select o.full_name, q.counts from owners as o join (
+select t2.id as a, count(t1.owner_id) as counts from 
+owners as t2 inner join
+animals as t1 on t1.owner_id = t2.id
+group by a
+) as q on true where q.a  = o.id
