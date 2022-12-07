@@ -69,7 +69,7 @@ WHERE date_of_birth > '1-JAN-1990' AND date_of_birth < '31-DEC-2000';
 SELECT neutered, COUNT(neutered) AS count FROM animals
 GROUP BY neutered;
 
-
+--  add queries
 select name from animals as t1 inner join 
 owners as t2 on t2.id = t1.owner_id and t2.full_name = 'Melody Pond'
 

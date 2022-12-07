@@ -26,6 +26,8 @@ insert into animals (id, name, date_of_birth, escape_attempts,
           (9, 'Blossom', '13-OCT-1998', 0, TRUE, 17 ),
           (10, 'Ditto', '14-MAY-2022', 4, TRUE, 22 );
 
+-- add data to the tables 
+
 insert into owners (full_name, age) values
 	('Sam Smith', 34),
 	('Jennifer Orwell', 19),

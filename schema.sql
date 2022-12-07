@@ -12,6 +12,7 @@ CREATE TABLE animals (
 ALTER TABLE animals 
 ADD COLUMN species VARCHAR;
 
+-- create new tables
 create table owners (
 	full_name text,
 	age INT,
@@ -24,6 +25,6 @@ create table species (
 );
 
 alter table animals drop species;
-
+-- alter old table
 alter table animals add species_id int;
 alter table animals add owner_id int;
