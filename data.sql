@@ -69,3 +69,51 @@ name = 'Charmander' or name = 'Squirtle' or name = 'Blossom'
 update animals set owner_id = 
 (select id from owners where full_name = 'Dean Winchester') where 
 name = 'Angemon' or name = 'Boarmon'
+
+
+
+insert into vets (name, age, date_of_graduation) values
+	('William Tatcher', 45, '23-APR-2000'),
+	('Maisy Smith', 26, '17-JAN-2019'),
+	('Stephanie Mendez', 64, '4-MAY-1981'),
+	('Jack Harkness', 38, '8-JUN-2008');
+
+
+
+insert into specializations (species_id, vets_id) values
+	(1, 1), (3, 1), (3, 2), (4, 2);
+
+  insert into vets (name, age, date_of_graduation) values
+	('William Tatcher', 45, '23-APR-2000'),
+	('Maisy Smith', 26, '17-JAN-2019'),
+	('Stephanie Mendez', 64, '4-MAY-1981'),
+	('Jack Harkness', 38, '8-JUN-2008');
+	
+	
+	
+insert into specializations (species_id, vets_id) values
+	(1, 1), (3, 1), (3, 2), (4, 2)
+
+
+
+insert into visits (vets_id, animals_id, visit_data) values 
+	(1, 0, '24-MAY-2020'),
+	(3, 0, '22-JUL-2020'),
+	(4, 1, '2-FEB-2021'),
+	(2, 2, '5-JAN-2020'),
+	(2, 2, '8-MAR-2020'),
+	(2, 2, '14-MAY-2020'),
+	(3, 3, '4-MAY-2021'),
+	(4, 4, '24-FEB-2021'),
+	(2, 5, '21-DEC-2019'),
+	(1, 5, '10-AUG-2020'),
+	(2, 5, '7-APR-2021'),
+	(3, 6, '29-SEP-2019'),
+	(4, 7, '3-OCT-2020'),
+	(4, 7, '4-NOV-2020'),
+	(2, 8, '24-JAN-2019'),
+	(2, 8, '15-MAY-2019'),
+	(2, 8, '27-FEB-2020'),
+	(2, 8, '3-AUG-2020'),
+	(3, 9, '24-MAY-2020'),
+	(1, 9, '11-JAN-2021');
