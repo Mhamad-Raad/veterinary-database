@@ -119,8 +119,6 @@ If you like this project, please give it a start :}.
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
 - **is it a must to have posgres**
 
   - not really.
@@ -135,7 +133,7 @@ If you like this project, please give it a start :}.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
