@@ -24,4 +24,17 @@ insert into animals (id, name, date_of_birth, escape_attempts,
           (7, 'Angemon', '12-JUN-2005', 1, TRUE, 45),
           (8, 'Boarmon', '7-JUN-2005', 7, TRUE, 20.4 ),
           (9, 'Blossom', '13-OCT-1998', 0, TRUE, 17 ),
-          (10, 'Ditto', '14-MAY-2022', 4, TRUE, 22 )
+          (10, 'Ditto', '14-MAY-2022', 4, TRUE, 22 );
+
+insert into owners (full_name, age) values
+	('Sam Smith', 34),
+	('Jennifer Orwell', 19),
+	('bob', 45),
+	('Melody Pond', 77),
+	('Dean Winchester', 14),
+	('Jodie Whittaker', 38);
+
+
+insert into species (name) values
+  ('Pokemon'),
+  ('Digimon');

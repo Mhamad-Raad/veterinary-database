@@ -11,3 +11,19 @@ CREATE TABLE animals (
 
 ALTER TABLE animals 
 ADD COLUMN species VARCHAR;
+
+create table owners (
+	full_name text,
+	age INT,
+	id SERIAL PRIMARY KEY
+);
+
+create table species (
+	name text,
+	id SERIAL PRIMARY KEY
+);
+
+alter table animals drop species;
+
+alter table animals add species_id int;
+alter table animals add owner_id int;
