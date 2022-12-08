@@ -99,3 +99,63 @@ owners as t2 inner join
 animals as t1 on t1.owner_id = t2.id
 group by a
 ) as q on true where q.a  = o.id
+
+
+select * from animals as t1 inner join 
+  (select animals_id from visits v1 where v1.visit_data= 
+  (select Max(visit_data) from visits v2 where v1.vets_id=v2.vets_id)
+  and v1.vets_id = 1
+  group by animals_id) sub
+  on sub.animals_id = t1.id
+
+select count(*) as different_pets from vets
+  join visits on vets.id = visits.vets_id
+  where visits.vets_id = 3;
+
+
+select vets.name, species.name as specialties from vets
+left join specializations as t2 on t2.vets_id = vets.id
+left join species on species.id = t2.species_id
+
+
+
+select animals.*, visits.visit_data as visit_date from animals 
+join visits on animals.id = visits.animals_id and 
+visits.visit_data >= '1-APR-2020' and visits.visit_data <= '30-AUG-2020'
+join vets on vets.id = visits.vets_id and vets.id = 3
+
+
+
+select * from animals as t1 inner join 
+  (select animals_id from visits v1 where v1.visit_data= 
+  (select min(visit_data) from visits v2 where v1.vets_id=v2.vets_id)
+  and v1.vets_id = 2
+  group by animals_id) sub
+  on sub.animals_id = t1.id
+
+
+select animals.*, vets.*, visits.* from animals join
+visits on animals.id = visits.animals_id 
+join vets on vets.id = visits.vets_id
+order by visits.visit_data desc limit 1 
+
+select count(*) from visits
+join vets on vets.id = visits.vets_id
+join specializations on vets.id = specializations.vets_id
+join animals on visits.animals_id = animals.id
+where animals.species_id != specializations.species_id
+
+
+select species.name as species, COUNT(*) from visits
+join vets on vets.id = visits.vets_id
+join animals on animals.id = visits.animals_id
+join species on species.id = animals.species_id
+where vets.id = 2
+group by species.name;
+
+
+select animals.name, COUNT(*) as counts from animals
+join visits on visits.animals_id = animals.id
+group by animals.name
+order by counts desc
+limit 1;
