@@ -162,3 +162,9 @@ join visits on visits.animals_id = animals.id
 group by animals.name
 order by counts desc
 limit 1;
+
+-- First Queries
+SELECT COUNT(*) FROM visits where animals_id = 4;
+SELECT * FROM visits where vets_id = 2;
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+
