@@ -48,3 +48,12 @@ create table visits (
 	animals_id int,
 	visit_data date
 );
+
+CREATE INDEX visits_index
+on visits (animals_id, vets_id);
+
+CREATE INDEX email_owners
+on owners (email);
+
+CREATE INDEX vetID_visits
+on visits (vets_id);
