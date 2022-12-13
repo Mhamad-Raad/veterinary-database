@@ -22,6 +22,10 @@
 
 **Veterinary Database** is a project used as a base model for vetirnaries that want to check on their patients and visitors,this project 
 has all the needed structure/data/queries that would work for a vetirnary system.
+the connection can be shown in the picture below:
+
+![database schema drawio](https://user-images.githubusercontent.com/57842355/207426293-cfaa2078-8c29-41bc-80ed-f625657cd411.png)
+
 
 ## 🛠 Built With <a name="built-with"></a>
 - SQL - posgresql.
